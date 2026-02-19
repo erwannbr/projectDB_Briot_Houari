@@ -143,5 +143,10 @@ This dictionary defines the "atoms" of information the system must store. It pro
 | Total Revenue per Product | Numeric | 15 |
 
 
-dire que on utilise pas record label time since c'est nous
+- dire que on utilise pas record label time since c'est nous
+- verifier si on peut faire apparaitre des relations strong weak sur looping?
+- refaire le read me (faire un peu comme tom genre faut que ca soit propre voira jouter des trucs)
+- relire si le looping te va et si ca correspond a ce que tu pensais faire
+- relire par rapport aux consignes si on suit tout ce qu'il faut
+- ajouter une image du looping dans le README
 
