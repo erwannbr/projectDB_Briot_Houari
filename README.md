@@ -143,6 +143,5 @@ This dictionary defines the "atoms" of information the system must store. It pro
 | Total Revenue per Product | Numeric | 15 |
 
 
-
----
+dire que on utilise pas record label time since c'est nous
 
