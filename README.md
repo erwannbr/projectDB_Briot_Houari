@@ -1,5 +1,5 @@
 # projectDB\_Briot\_Houari
-<img width="1000" height="400" alt="image" src="https://github.com/user-attachments/assets/7c6cc0cb-e7df-4812-bd18-76fa7ea2ac99" />
+<img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/7c6cc0cb-e7df-4812-bd18-76fa7ea2ac99" />
 
 
 
