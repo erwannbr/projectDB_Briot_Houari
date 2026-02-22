@@ -28,7 +28,6 @@ Provide the business rules and the data dictionary.As the analysis lead for \*\*
 
 
 
-As requested, here is the verbatim content for your `README.md` file, incorporating the requirements analysis and data dictionary.
 
 ## I. Data Business Rules
 
@@ -83,7 +82,6 @@ This dictionary defines the "atoms" of information the system must store. It pro
 | Unit Sale Price (Retail) | Numeric | 8 |
 | Initial Quantity Produced (Stock) | Numeric | 10 |
 | Total Units Sold (Physical) | Numeric | 10 |
-| Record Label Name | Alphanumeric | 50 |
 | Total Revenue per Product | Numeric | 15 |
 
 ---
