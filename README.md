@@ -28,125 +28,63 @@ Provide the business rules and the data dictionary.As the analysis lead for \*\*
 
 
 
-\## I. Data Business Rules
+As requested, here is the verbatim content for your `README.md` file, incorporating the requirements analysis and data dictionary.
 
+## I. Data Business Rules
 
+The following rules describe how our label operates daily. They define the relationships between our artist, her music, her fans, and her commercial ventures:
 
-The following rules describe how our label operates daily. They define the relationships between our artist, her music, her fans, and her commercial ventures.
+* **Artist & Collaborations:** We manage the main artist (**RAYE**). However, many tracks involve other performers. We must distinguish between the "Primary Artist" and "Featured Artists" for every recording to ensure correct billing and royalty distribution.
+* **Product Hierarchy:** A "Release" is our top-level product, which can be an **Album**, an **EP**, or a **Single**. Each Release is identified by a unique 13-digit Universal Product Code (UPC).
+* **Track Composition:** A Release consists of one or more "Tracks." Each individual track is identified globally by a 12-character International Standard Recording Code (ISRC).
+* **Digital Distribution:** We monitor performance across multiple "Platforms" (Spotify, Apple Music, Deezer). We need to track total "Lifetime Streams" per track and per platform.
+* **Monthly Analytics:** Beyond lifetime totals, we must record the "Monthly Listeners" for the artist as a whole to track popularity trends over time.
+* **Global Geography:** We identify where our fans are located by tracking the number of listeners per "Country." We use standard 2-letter ISO codes for these locations.
+* **Fan Demographics:** To refine our marketing, we categorize our audience into "Age Brackets" (e.g., 18-24, 25-34). We need to know the specific percentage of our total listenership that falls into each bracket.
+* **Touring & Live Events:** Every "Concert" is a specific event tied to a "World Tour" name. A concert occurs on a specific "Date" at a specific "Venue."
+* **Venue Logistics:** We must track the location of the venue (City and Country) and its "Maximum Capacity" to compare against the "Actual Tickets Sold."
+* **Commerce & Merchandising:** We sell physical goods categorized as "Media" (Vinyls, CDs) or "Apparel" (T-shirts, hoodies).
+* **Inventory Control:** Each physical product has a unique "SKU" (Stock Keeping Unit). We must maintain data on the "Unit Price," the "Initial Stock" produced, and the "Current Units Sold" to monitor real-time revenue.
 
-
-
-\* \*\*Artist \& Collaborations:\*\* We manage the main artist (\*\*RAYE\*\*). However, many tracks involve other performers. We must distinguish between the "Primary Artist" and "Featured Artists" for every recording to ensure correct billing and royalty distribution.
-
-\* \*\*Product Hierarchy:\*\* A "Release" is our top-level product, which can be an \*\*Album\*\*, an \*\*EP\*\*, or a \*\*Single\*\*. Each Release is identified by a unique 13-digit Universal Product Code (UPC).
-
-\* \*\*Track Composition:\*\* A Release consists of one or more "Tracks." Each individual track is identified globally by a 12-character International Standard Recording Code (ISRC).
-
-\* \*\*Digital Distribution:\*\* We monitor performance across multiple "Platforms" (Spotify, Apple Music, Deezer). We need to track total "Lifetime Streams" per track and per platform.
-
-\* \*\*Monthly Analytics:\*\* Beyond lifetime totals, we must record the "Monthly Listeners" for the artist as a whole to track popularity trends over time.
-
-\* \*\*Global Geography:\*\* We identify where our fans are located by tracking the number of listeners per "Country." We use standard 2-letter ISO codes for these locations.
-
-\* \*\*Fan Demographics:\*\* To refine our marketing, we categorize our audience into "Age Brackets" (e.g., 18-24, 25-34). We need to know the specific percentage of our total listenership that falls into each bracket.
-
-\* \*\*Touring \& Live Events:\*\* Every "Concert" is a specific event tied to a "World Tour" name. A concert occurs on a specific "Date" at a specific "Venue."
-
-\* \*\*Venue Logistics:\*\* We must track the location of the venue (City and Country) and its "Maximum Capacity" to compare against the "Actual Tickets Sold."
-
-\* \*\*Commerce \& Merchandising:\*\* We sell physical goods categorized as "Media" (Vinyls, CDs) or "Apparel" (T-shirts, hoodies).
-
-\* \*\*Inventory Control:\*\* Each physical product has a unique "SKU" (Stock Keeping Unit). We must maintain data on the "Unit Price," the "Initial Stock" produced, and the "Current Units Sold" to monitor real-time revenue.
-
-
-
----
-
-
-
-\## II. Raw Data Dictionary
-
-
+## II. Raw Data Dictionary
 
 This dictionary defines the "atoms" of information the system must store. It provides the technical constraints for size and type without assuming how the tables will eventually be linked.
 
-
-
 | Meaning of the Data | Type | Size (Chars/Digits) |
-
 | --- | --- | --- |
-
 | Unique Song Identification Code (ISRC) | Alphanumeric | 12 |
-
 | Global Product Barcode (UPC) | Alphanumeric | 13 |
-
 | Title of the Track | Alphanumeric | 100 |
-
 | Title of the Album/Release | Alphanumeric | 100 |
-
 | Release Category (Album, EP, Single) | Alphabetic | 10 |
-
 | Official Release Date | Date | 10 |
-
 | Duration of the Track (in seconds) | Numeric | 4 |
-
 | Artist or Collaborator Name | Alphanumeric | 50 |
-
 | Artist Role (Primary/Featured) | Alphabetic | 15 |
-
 | Digital Platform Name (Spotify, etc.) | Alphabetic | 20 |
-
 | Total Lifetime Streams per Track | Numeric | 15 |
-
 | Monthly Active Listeners (Artist Level) | Numeric | 12 |
-
 | Country Name | Alphabetic | 50 |
-
 | Country ISO Code (e.g., UK, US) | Alphabetic | 2 |
-
 | Total Listeners per Country | Numeric | 12 |
-
 | Age Group Range (e.g., 18-24) | Alphanumeric | 10 |
-
 | Percentage of Audience in Age Group | Numeric | 5 |
-
 | World Tour Name | Alphanumeric | 100 |
-
 | Date of the Concert | Date | 10 |
-
 | Venue Name (Stadium/Arena) | Alphanumeric | 100 |
-
 | Venue City | Alphabetic | 50 |
-
 | Venue Country | Alphabetic | 50 |
-
 | Maximum Venue Capacity | Numeric | 7 |
-
 | Actual Tickets Sold | Numeric | 7 |
-
 | Standard Ticket Price | Numeric | 8 |
-
 | Merchandise Item Name | Alphanumeric | 50 |
-
 | Product SKU (Stock Keeping Unit) | Alphanumeric | 20 |
-
 | Product Category (Vinyl, CD, Merch) | Alphabetic | 20 |
-
 | Unit Sale Price (Retail) | Numeric | 8 |
-
 | Initial Quantity Produced (Stock) | Numeric | 10 |
-
 | Total Units Sold (Physical) | Numeric | 10 |
-
 | Record Label Name | Alphanumeric | 50 |
-
 | Total Revenue per Product | Numeric | 15 |
 
-
-- dire que on utilise pas record label time since c'est nous
-- verifier si on peut faire apparaitre des relations strong weak sur looping?
-- refaire le read me (faire un peu comme tom genre faut que ca soit propre voira jouter des trucs)
-- relire si le looping te va et si ca correspond a ce que tu pensais faire
-- relire par rapport aux consignes si on suit tout ce qu'il faut
-- ajouter une image du looping dans le README
-
+---
+<img width="1438" height="755" alt="image" src="https://github.com/user-attachments/assets/ea9fd427-c5fc-478b-a324-8ca72c1df61e" />
