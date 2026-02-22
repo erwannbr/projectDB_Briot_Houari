@@ -5,9 +5,7 @@
 
 
 
-°
-°
-°
+
 You work in the field of MUSIC. Your COMPANY "Raye band" is involved in the domain of the management of the artist(raye). It is a label such as Lioness records, 32 Jazz. number of sales,nmbr of listeners((albums, singles(number of listeners per music)),concerts(stadiums,nmb of people,date) merch,vinyls,CDs), number of listeners per month,age of the listeners,places they are listening in (countries)and featuring with other artists . Take inspiration from the following sites: spotify,https://rayeofficial.com/,wikipedia, apple music, deezer, universal music.
 
 
