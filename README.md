@@ -87,3 +87,4 @@ This dictionary defines the "atoms" of information the system must store. It pro
 | Total Revenue per Product | Numeric | 15 |
 
 ---
+<img width="1438" height="755" alt="image" src="https://github.com/user-attachments/assets/ea9fd427-c5fc-478b-a324-8ca72c1df61e" />
