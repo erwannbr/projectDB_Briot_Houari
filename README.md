@@ -1,9 +1,9 @@
 # projectDB\_Briot\_Houari
   <img width="1000" height="200" alt="image" src="https://github.com/user-attachments/assets/7c6cc0cb-e7df-4812-bd18-76fa7ea2ac99" />
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 You work in the field of MUSIC. Your COMPANY "Raye band" is involved in the domain of the management of the artist(raye). It is a label such as Lioness records, 32 Jazz. number of sales,nmbr of listeners((albums, singles(number of listeners per music)),concerts(stadiums,nmb of people,date) merch,vinyls,CDs), number of listeners per month,age of the listeners,places they are listening in (countries)and featuring with other artists . Take inspiration from the following sites: spotify,https://rayeofficial.com/,wikipedia, apple music, deezer, universal music.
