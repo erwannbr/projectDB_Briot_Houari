@@ -88,3 +88,20 @@ This dictionary defines the "atoms" of information the system must store. It pro
 
 ---
 <img width="1438" height="755" alt="image" src="https://github.com/user-attachments/assets/ea9fd427-c5fc-478b-a324-8ca72c1df61e" />
+
+
+Platform = (platform_id BYTE, platform_name VARCHAR(20), platform_monthly_active_listeners INT);
+Release_ = (release_upc VARCHAR(13), release_type VARCHAR(10), release_title VARCHAR(100), release_date DATE, #release_upc_Parents_album*);
+Track = (tracks_ISRC VARCHAR(12), tracks_title VARCHAR(100), tracks_duration SMALLINT, #release_upc);
+Artistes = (artiste_id INT, artiste_name VARCHAR(50));
+Country = (country_iso VARCHAR(2), country_total_listeners INT, country_name VARCHAR(50));
+Venue = (venue_name VARCHAR(100), venue_city VARCHAR(50), venue_country VARCHAR(50), venue_maximum_capacity INT);
+Merch = (merch_SKU VARCHAR(20), merch_item_name VARCHAR(50), merch_product_category VARCHAR(20), merch_unit_sell_price INT, merch_total_per_product INT, merch_total_unit_sold INT, merch_initial_quantity_produced SMALLINT);
+Démographics = (demographic_id INT, demographic_age_range VARCHAR(10));
+World_Tour = (tour_id INT, tour_name VARCHAR(100));
+Concerts = (#tour_id, concert_id INT, concert_date DATE, concert_ticket_sold INT, concert_ticket_price INT, #venue_name);
+Part_of = (#tracks_ISRC, #artiste_id, part_role VARCHAR(15));
+Streamed_on = (#platform_id, #tracks_ISRC, #country_iso, streamed_number_of_stream BIGINT);
+Sells = (#merch_SKU, #tour_id);
+are_invited = (#artiste_id, #(#tour_id, concert_id));
+Analysed_by = (#(#tour_id, concert_id), #demographic_id, analysed_percentage_audience_age VARCHAR(50));
