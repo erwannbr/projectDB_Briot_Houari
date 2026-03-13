@@ -1,4 +1,3 @@
-
 USE Mini_Project;
 
 -- Range Constraints --
