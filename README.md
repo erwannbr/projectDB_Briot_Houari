@@ -89,6 +89,9 @@ This dictionary defines the "atoms" of information the system must store. It pro
 ---
 <img width="1438" height="755" alt="image" src="https://github.com/user-attachments/assets/ea9fd427-c5fc-478b-a324-8ca72c1df61e" />
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## III. A. The resulting LDM
 
 Platform = (platform_id BYTE, platform_name VARCHAR(20), platform_monthly_active_listeners INT);
 Release_ = (release_upc VARCHAR(13), release_type VARCHAR(10), release_title VARCHAR(100), release_date DATE, #release_upc_Parents_album*);
@@ -105,3 +108,56 @@ Streamed_on = (#platform_id, #tracks_ISRC, #country_iso, streamed_number_of_stre
 Sells = (#merch_SKU, #tour_id);
 are_invited = (#artiste_id, #(#tour_id, concert_id));
 Analysed_by = (#(#tour_id, concert_id), #demographic_id, analysed_percentage_audience_age VARCHAR(50));
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## IV. Insertion 
+
+We used the following prompt: 
+Provide the insertion queries used to populate the database, whose relational model is as follows:
+
+Platform = (platform_id BYTE, platform_name VARCHAR(20), platform_monthly_active_listeners INT);
+Release_ = (release_upc VARCHAR(13), release_type VARCHAR(10), release_title VARCHAR(100), release_date DATE, #release_upc_Parents_album*);
+Track = (tracks_ISRC VARCHAR(12), tracks_title VARCHAR(100), tracks_duration SMALLINT, #release_upc);
+Artistes = (artiste_id INT, artiste_name VARCHAR(50));
+Country = (country_iso VARCHAR(2), country_total_listeners INT, country_name VARCHAR(50));
+Venue = (venue_name VARCHAR(100), venue_city VARCHAR(50), venue_country VARCHAR(50), venue_maximum_capacity INT);
+Merch = (merch_SKU VARCHAR(20), merch_item_name VARCHAR(50), merch_product_category VARCHAR(20), merch_unit_sell_price INT, merch_total_per_product INT, merch_total_unit_sold INT, merch_initial_quantity_produced SMALLINT);
+Démographics = (demographic_id INT, demographic_age_range VARCHAR(10));
+World_Tour = (tour_id INT, tour_name VARCHAR(100));
+Concerts = (#tour_id, concert_id INT, concert_date DATE, concert_ticket_sold INT, concert_ticket_price INT, #venue_name);
+Part_of = (#tracks_ISRC, #artiste_id, part_role VARCHAR(15));
+Streamed_on = (#platform_id, #tracks_ISRC, #country_iso, streamed_number_of_stream BIGINT);
+Sells = (#merch_SKU, #tour_id);
+are_invited = (#artiste_id, #(#tour_id, concert_id));
+Analysed_by = (#(#tour_id, concert_id), #demographic_id, analysed_percentage_audience_age VARCHAR(50));
+
+or simply find the model in the file 1_creation
+
+
+Primary keys correspond to IDs, unless otherwise specified (when it is a composite attribute). Foreign keys are identified by # and have the same name as the primary keys to which they refer.
+You must: provide enough data to be able to use the databse 
+          use the songs of raye (the artist)
+
+Foreign keys must refer to existing primary keys: provide the lines starting with filling in the tables in which there are no foreign keys, then the tables in which the foreign keys refer to primary keys in tables that have already been filled in. 
+
+The data must comply with the following validation constraints:
+
+find the constraint in the file 2_constraint
+
+Make sure that the students' first and last names refer to various origins and are mixed. 
+
+Provide the set in the form of an SQL script ready to be executed.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## V. The scenario 
+
+Usage Scenario: Independent Artist Management (RAYE - My 21st Century Blues)
+Since RAYE transitioned to being a fully independent artist under her own label (Human Re Sources/The Orchard), her team has taken on the full administrative and logistical responsibility previously handled by a major label. To manage this complexity, we have designed this database to serve as the operational backbone for the "My 21st Century Blues" era and its corresponding World Tour.
+
+Our Role
+In this project, we take on the role of Data Analysts for RAYE’s independent management team. Our goal is to transform raw tour, streaming, and sales data into actionable insights that allow the team to make informed decisions without the safety net of a major corporation.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
